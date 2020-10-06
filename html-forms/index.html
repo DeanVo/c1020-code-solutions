@@ -9,11 +9,11 @@
   <h1>Coding Form!</h1>
 
   <form>
-    <div>Email</div>
-    <input type="text" name="email"/>
+    <div><label for="email">Email</label></div>
+    <input type="text" name="email" id="email"/>
 
-    <div>Why is coding cool?</div>
-    <select name="coding">
+    <div><label for="why is coding cool">Why is coding cool?</label></div>
+    <select id="why is coding cool" name="coding">
       <option value="select an option">Select an option</option>
       <option value="because it's interesting">Because it's interesting</option>
       <option value="because it's fun">Because it's fun</option>
@@ -21,14 +21,14 @@
     </select>
 
     <div>Favorite Language (choose one)</div>
-    <input type="radio" name="language" value="HTML"/> HTML
-    <input type="radio" name="language" value="CSS"/> CSS
-    <input type="radio" name="language" value="JavaScript"/> JavaScript
+    <input type="radio" name="language" value="HTML" id="HTML"/> <label for="HTML">HTML</label>
+    <input type="radio" name="language" value="CSS" id="CSS"/> <label for="CSS">CSS</label>
+    <input type="radio" name="language" value="JavaScript" id="JavaScript"/> <label for="JavaScript">JavaScript</label>
 
-    <div>Would you like to sign up for more information?</div>
+    <div><label for="more info">Would you like to sign up for more information?</label></div>
     <input type="checkbox" name="more info" value="sign me up"/>Sign me up!
 
-    <div>Comments</div>
+    <div><label for="comments">Comments</label></div>
     <textarea name="comments" cols="20" rows="8"></textarea>
     <br/>
     <input type="submit" value="Submit"/>
