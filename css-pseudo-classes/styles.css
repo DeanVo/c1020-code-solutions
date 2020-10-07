@@ -14,10 +14,10 @@ thead {
   color: white;
 }
 
-.row1 {
-  background-color: gray;
+tbody > tr:nth-child(odd) {
+  background-color: darkgray;
 }
 
-.row2 {
+tbody > tr:nth-child(even) {
   background-color: lightgray;
 }
