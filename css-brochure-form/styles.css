@@ -1,0 +1,50 @@
+body {
+  text-align: center;
+  font-family: 'Brandon Grotesque', serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 0 15rem;
+}
+
+h1 {
+  color: orangered;
+}
+
+div {
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+input:not(#submit-button),
+select {
+  padding: 12px 20px;
+  margin: 2px 0;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.button-container {
+  text-align: right;
+}
+
+#submit-button {
+  background-color: orangered;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+#submit-button:hover {
+  background-color: black;
+  color: orangered;
+  cursor: pointer;
+}
+
+#hiring-engineers {
+  background-color: lightgray;
+}
