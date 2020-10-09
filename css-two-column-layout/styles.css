@@ -1,0 +1,33 @@
+body {
+  font-family: 'Karla', Arial, Helvetica, sans-serif;
+}
+
+.top-head {
+  text-align: center;
+  font-size: 42px;
+  text-transform: uppercase;
+}
+
+.top-caption {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5rem;
+  padding: 0 150px;
+  padding-bottom: 20px;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.row {
+  display: flex;
+}
+
+.column-one-third {
+  flex-basis: calc(100% / 3);
+}
+
+.column-two-thirds {
+  flex-basis: 67%;
+}
