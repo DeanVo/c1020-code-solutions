@@ -1,0 +1,42 @@
+body {
+  background-color: lightskyblue;
+  color: white;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+h2,
+p {
+  text-align: center;
+  font-size: 14px;
+}
+
+img {
+  height: 50%;
+  display: flex;
+  align-self: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.circle-container {
+  background-color: white;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.column-one-third {
+  flex-basis: calc(100% / 3);
+  margin: 0 15px;
+}
