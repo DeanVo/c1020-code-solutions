@@ -2,6 +2,10 @@ body {
   font-family: 'Karla', Arial, Helvetica, sans-serif;
 }
 
+.column-one-third > img {
+  width: 70%;
+}
+
 .top-head {
   text-align: center;
   font-size: 42px;
@@ -26,8 +30,16 @@ body {
 
 .column-one-third {
   flex-basis: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .column-two-thirds {
   flex-basis: 67%;
+  line-height: 1.5rem;
+}
+
+.button-container {
+  border: red solid;
 }
