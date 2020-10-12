@@ -2,6 +2,20 @@ body {
   font-family: 'Karla', Arial, Helvetica, sans-serif;
 }
 
+button {
+  border: solid red;
+  color: red;
+  background-color: white;
+  font-family: 'Karla', Arial, Helvetica, sans-serif;
+  padding: 10px 30px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .column-one-third > img {
   width: 70%;
 }
