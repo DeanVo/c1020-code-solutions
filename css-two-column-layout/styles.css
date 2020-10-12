@@ -1,0 +1,55 @@
+body {
+  font-family: 'Karla', Arial, Helvetica, sans-serif;
+}
+
+button {
+  border: solid red;
+  color: red;
+  background-color: white;
+  font-family: 'Karla', Arial, Helvetica, sans-serif;
+  padding: 10px 30px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-one-third > img {
+  width: 70%;
+}
+
+.top-head {
+  text-align: center;
+  font-size: 42px;
+  text-transform: uppercase;
+}
+
+.top-caption {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5rem;
+  padding: 0 150px;
+  padding-bottom: 20px;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.row {
+  display: flex;
+}
+
+.column-one-third {
+  flex-basis: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.column-two-thirds {
+  flex-basis: 67%;
+  line-height: 1.5rem;
+}
