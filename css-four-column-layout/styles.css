@@ -1,0 +1,62 @@
+body {
+  font-family: 'Barlow', sans-serif;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+img {
+  width: 80%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-quarter {
+  flex-basis: 25%;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.top-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+div > .icon {
+  width: 20%;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  padding-right: 3rem;
+}
+
+.bot-header {
+  text-align: center;
+  padding-right: 3rem;
+}
+
+.bot-header > h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bot-caption {
+  position: relative;
+  bottom: 5px;
+  right: 25px;
+  text-align: center;
+}
+
+.bot-caption > p {
+  font-size: 14px;
+}
