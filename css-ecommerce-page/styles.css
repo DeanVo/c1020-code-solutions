@@ -1,0 +1,58 @@
+body {
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+}
+
+.lv-bag {
+  object-fit: cover;
+}
+
+img {
+  width: 100%;
+}
+
+.column-full {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-fifths {
+  flex-basis: 20%;
+}
+
+.captions-flex {
+  display: flex;
+}
+
+.black-caption {
+  font-weight: bold;
+}
+
+.grey-caption {
+  color: #dedede;
+  font-size: 15px;
+}
+
+.price-container {
+  position: relative;
+  bottom: 15px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #f6ede4;
+}
+
+.striked-price {
+  color: #dedede;
+}
