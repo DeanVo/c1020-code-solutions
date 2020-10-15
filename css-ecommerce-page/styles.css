@@ -21,6 +21,10 @@ img {
   margin: 0 auto;
 }
 
+.image-container {
+  padding: 0 10px;
+}
+
 .row {
   display: flex;
 }
@@ -31,6 +35,7 @@ img {
 
 .captions-flex {
   display: flex;
+  padding: 0 10px;
 }
 
 .black-caption {
@@ -55,4 +60,5 @@ img {
 
 .striked-price {
   color: #dedede;
+  text-decoration: line-through;
 }
