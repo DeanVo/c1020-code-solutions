@@ -3,10 +3,6 @@ body {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-img {
-  width: 80%;
-}
-
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -14,6 +10,7 @@ img {
 
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column-quarter {
@@ -30,19 +27,25 @@ img {
   font-size: 20px;
 }
 
-div > .icon {
-  width: 20%;
+.phone {
+  width: 80%;
 }
 
 .icon-container {
   display: flex;
   justify-content: center;
-  padding-right: 3rem;
+  position: relative;
+  right: 25px;
+}
+
+.icon {
+  width: 15%;
 }
 
 .bot-header {
   text-align: center;
-  padding-right: 3rem;
+  position: relative;
+  right: 25px;
 }
 
 .bot-header > h3 {
@@ -51,12 +54,9 @@ div > .icon {
 }
 
 .bot-caption {
-  position: relative;
-  bottom: 5px;
-  right: 25px;
   text-align: center;
-}
-
-.bot-caption > p {
+  position: relative;
+  right: 25px;
+  bottom: 10px;
   font-size: 14px;
 }
