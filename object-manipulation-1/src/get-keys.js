@@ -3,7 +3,7 @@
 function getKeys(object) {
   var newArray = [];
   for (var property in object) {
-    newArray.push(`${property}`);
+    newArray.push(property);
   }
   return newArray;
 }
