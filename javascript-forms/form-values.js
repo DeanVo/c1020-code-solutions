@@ -1,7 +1,7 @@
 var elContactForm = document.getElementById('contact-form');
-var newObject = {};
 
 function handleSubmit(event) {
+  var newObject = {};
   event.preventDefault();
   newObject.name = elContactForm.elements.name.value;
   newObject.email = elContactForm.elements.email.value;
