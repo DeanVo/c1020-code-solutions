@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+}
+
+.lightbulb-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff5f6;
+}
+
+.lightbulb-container.black {
+  background-color: black;
+}
+
+.lightbulb {
+  height: 250px;
+  width: 250px;
+  background-color: #ffff9e;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0 25px #fffce6;
+}
+
+.lightbulb.off {
+  background-color: rgb(43, 43, 43);
+  box-shadow: none;
+}
+
+.lightbulb.on {
+  background-color: #ffff9e;
+  box-shadow: 0 0 0 25px #fffce6;
+}
