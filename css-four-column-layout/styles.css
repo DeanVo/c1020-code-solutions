@@ -10,7 +10,6 @@ body {
 
 .row {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .column-quarter {
@@ -31,29 +30,22 @@ body {
   width: 80%;
 }
 
-.icon-container {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  right: 25px;
-}
-
 .icon {
   width: 15%;
+  display: flex;
+  margin: 0 auto;
+  padding-right: 2.5rem;
 }
 
-.bot-header {
+h3 {
   text-align: center;
   position: relative;
   right: 25px;
-}
-
-.bot-header > h3 {
   font-size: 16px;
   font-weight: bold;
 }
 
-.bot-caption {
+p {
   text-align: center;
   position: relative;
   right: 25px;
