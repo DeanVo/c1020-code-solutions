@@ -2,12 +2,11 @@
 
 function reverseWords(string) {
   var stringArray = string.split(' ');
-  var reverseWord = '';
-  var result;
+  var newArray = [];
 
   for (var i = 0; i < stringArray.length; i++) {
-    reverseWord = string[i].split('').reverse();
-    result += reverseWord;
+    newArray.push(stringArray[i].split('').reverse().join(''));
   }
-  return result;
+  newArray = newArray.join(' ');
+  return newArray;
 }
