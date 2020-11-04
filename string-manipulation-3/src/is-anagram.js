@@ -1,16 +1,12 @@
 /* eslint-disable no-unused-vars */
 
-// function isAnagram(firstString, secondString) {
-//   var sortAlphabetically = function (text) {
-//     text.split('').sort().join('');
-//   };
-//   var result;
+function isAnagram(firstString, secondString) {
+  firstString = firstString.split('').sort().join('');
+  secondString = secondString.split('').sort().join('');
 
-//   if (sortAlphabetically(firstString) === sortAlphabetically(secondString)) {
-//     result = true;
-//   } else {
-//     result = false;
-//   }
-//   console.log('roses and horse', sortAlphabetically('roses') === sortAlphabetically('horse'));
-//   return result;
-// }
+  if (firstString.replaceAll(' ', '') === secondString.replaceAll(' ', '')) {
+    return true;
+  } else {
+    return false;
+  }
+}
