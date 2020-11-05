@@ -1,0 +1,41 @@
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.icon-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.chevron {
+  align-self: center;
+  cursor: pointer;
+}
+
+.chevron-left {
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
+.chevron-right {
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+.circle-icon {
+  cursor: pointer;
+}
+
+.active {
+  color: green;
+}
+
+.hidden {
+  display: none;
+}
