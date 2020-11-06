@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 
-// function titleCase(title) {
-//   var stringArray = title.split(' ');
-//   var newArray = [];
+function titleCase(title) {
+  var stringArray = title.split(' ');
+  var newArray = [];
 
-//   for (var i = 0; i < stringArray.length; i++) {
-//     newArray.push(stringArray[i].charAt(0).toUpperCase() + );
-//   }
-//   return newArray;
-// }
+  for (var i = 0; i < stringArray.length; i++) {
+    newArray.push(stringArray[i].charAt(0).toUpperCase() + stringArray[i].substring(1));
+  }
+  return newArray.join(' ');
+}
