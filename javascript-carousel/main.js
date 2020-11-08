@@ -1,65 +1,50 @@
 var $carouselImages = document.querySelectorAll('.carousel-image');
 var $circleIcon = document.querySelectorAll('.circle-icon');
-var intervalID = setInterval(slideshow, 3000);
-var imageIndex = 0;
-// var slide = 0;
+var intervalID = setInterval(toggleRight, 3000);
+var imageIndex = 1;
+var $chevronRight = document.querySelector('.chevron-right');
+var $chevronLeft = document.querySelector('.chevron-left');
 
-// function slideshow() {
-//   for (var i = 0; i < $carouselImages.length; i++) {
-//     $carouselImages[i].className = 'carousel-image hidden';
-//     $circleIcon[i].className = 'fas fa-circle circle-icon';
-//   }
-//   slide++;
-//   if (slide > $carouselImages.length) {
-//     slide = 1;
-//   }
-
-//   $carouselImages[slide - 1].className = 'carousel-image view';
-//   $circleIcon[slide - 1].className = 'fas fa-circle active circle-icon';
-//   setTimeout(intervalID);
-// }
-
-function slideshow() {
-  for (var i = 0; i < $carouselImages.length; i++) {
-    if (imageIndex !== $carouselImages[i]) {
+function changeImage(index) {
+  if (index <= $carouselImages.length) {
+    for (var i = 0; i < $carouselImages.length; i++) {
       $carouselImages[i].className = 'carousel-image hidden';
       $circleIcon[i].className = 'fas fa-circle circle-icon';
+
+      if ((index - 1) === i && index !== 0) {
+        $carouselImages[i].className = 'carousel-image view';
+        $circleIcon[i].className = 'fas fa-circle active circle-icon';
+      }
+
+      if (index === 0) {
+        imageIndex = 1;
+        $carouselImages[0].className = 'carousel-image view';
+        $circleIcon[0].className = 'fas fa-circle active circle-icon';
+      }
     }
   }
+}
+
+function toggleRight() {
+  if (imageIndex > $carouselImages.length - 1) {
+    imageIndex = 0;
+  }
   imageIndex++;
-  if (imageIndex > $carouselImages.length) {
-    imageIndex = 1;
-  }
-  $carouselImages[imageIndex - 1].className = 'carousel-image view';
-  $circleIcon[imageIndex - 1].className = 'fas fa-circle active circle-icon';
-  setTimeout(intervalID);
+  changeImage(imageIndex);
+  resetTimer();
 }
 
-var $chevronRight = document.querySelector('.chevron-right');
-$chevronRight.addEventListener('click', slideshowRight);
+$chevronRight.addEventListener('click', toggleRight);
 
-function slideshowRight() {
-  if (event.target.id === 'chevron-right' && imageIndex < 4) {
-    imageIndex++;
-  }
-
-  $carouselImages[imageIndex].className = 'carousel-image view';
-  $circleIcon[imageIndex].className = 'fas fa-circle active circle-icon';
-
-  $carouselImages[imageIndex - 1].className = 'carousel-image hidden';
-  $circleIcon[imageIndex - 1].className = 'fas fa-circle circle-icon';
+function toggleLeft() {
+  imageIndex--;
+  changeImage(imageIndex);
+  resetTimer();
 }
 
-var $chevronLeft = document.querySelector('.chevron-left');
-$chevronLeft.addEventListener('click', slideshowLeft);
+$chevronLeft.addEventListener('click', toggleLeft);
 
-function slideshowLeft() {
-  if (event.target.id === 'chevron-left' && imageIndex > 0) {
-    imageIndex--;
-  }
-  $carouselImages[imageIndex].className = 'carousel-image view';
-  $circleIcon[imageIndex].className = 'fas fa-circle active circle-icon';
-
-  $carouselImages[imageIndex + 1].className = 'carousel-image hidden';
-  $circleIcon[imageIndex + 1].className = 'fas fa-circle circle-icon';
+function resetTimer() {
+  clearInterval(intervalID);
+  intervalID = setInterval(toggleRight, 3000);
 }
