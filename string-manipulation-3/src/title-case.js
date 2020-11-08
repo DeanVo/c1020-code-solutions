@@ -46,6 +46,7 @@
 
 function titleCase(title) {
   var stringArray = title.split(' ');
+  var trashArray = [];
   var newArray = [];
   var lastIndex = stringArray.length - 1;
 
@@ -68,6 +69,18 @@ function titleCase(title) {
     }
   }
   newArray = newArray.join(' ');
+
+  if (newArray.includes('An an')) {
+    newArray = newArray.replace('An an', 'An');
+  } else if (newArray.includes('The the')) {
+    newArray = newArray.replace('The the', 'The');
+  }
+
+  if (newArray.includes('javascript:')) {
+    newArray = newArray.replace('javascript:', 'JavaScript:');
+  } else if (newArray.includes('Javascript:')) {
+    newArray = newArray.replace('Javascript:', 'JavaScript:');
+  }
 
   return newArray;
 }
