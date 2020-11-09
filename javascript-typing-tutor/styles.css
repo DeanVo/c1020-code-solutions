@@ -1,0 +1,42 @@
+html {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.incorrect-notification {
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.underline {
+  border-bottom: 3px solid black;
+}
+
+.underline-red {
+  border-bottom: 3px solid red;
+}
+
+.hidden {
+  display: none;
+}
