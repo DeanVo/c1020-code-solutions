@@ -17,7 +17,7 @@ app.get('/api/notes', (req, res) => {
 app.get('/api/notes/:id', (req, res) => {
   const id = parseInt(req.params.id);
 
-  if (id < 0) {
+  if (id <= 0 || isNaN(id)) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (!data.notes[id]) {
     res.status(404).json({ error: `cannot find note with id ${id}` });
@@ -39,7 +39,7 @@ app.post('/api/notes', (req, res) => {
 
     const jsonString = JSON.stringify(data, null, 2);
 
-    fs.writeFile('derp/data.json', jsonString, err => {
+    fs.writeFile('data.json', jsonString, err => {
       if (err) {
         res.status(500).json({ error: 'An unexpected error occurred.' });
       } else {
@@ -47,7 +47,50 @@ app.post('/api/notes', (req, res) => {
       }
     });
   }
+});
 
+app.delete('/api/notes/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+
+  if (id <= 0 || isNaN(id)) {
+    res.status(400).json({ error: 'id must be a positive integer' });
+  } else if (!data.notes[id]) {
+    res.status(400).json({ error: `cannot find note with id ${id}` });
+  } else if (data.notes[id]) {
+    delete data.notes[id];
+    const jsonString = JSON.stringify(data, null, 2);
+
+    fs.writeFile('data.json', jsonString, err => {
+      if (err) {
+        res.status(500).json({ error: 'An unexpected error occurred' });
+      } else {
+        res.status(204).send();
+      }
+    });
+  }
+});
+
+app.put('/api/notes/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const newContent = req.body.content;
+
+  if (id <= 0 || isNaN(id)) {
+    res.status(400).json({ error: 'id must be a positive integer' });
+  } else if (!newContent) {
+    res.status(400).json({ error: 'content is a required field' });
+  } else if (!data.notes[id]) {
+    res.status(404).json({ error: `cannot find note with id ${id}` });
+  } else if (data.notes[id] && newContent) {
+    data.notes[id].content = newContent;
+    const jsonString = JSON.stringify(data, null, 2);
+    fs.writeFile('data.json', jsonString, err => {
+      if (err) {
+        res.status(500).json({ error: 'An unexpected error occurred.' });
+      } else {
+        res.status(200).json(data.notes[id]);
+      }
+    });
+  }
 });
 
 app.listen(3000, () => {
