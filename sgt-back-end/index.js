@@ -43,11 +43,7 @@ app.post('/api/grades', (req, res, next) => {
 
   db.query(sql, params)
     .then(result => {
-      res.status(201).json({
-        name: newName,
-        course: newCourse,
-        score: newScore
-      });
+      res.status(201).json(result.rows[0]);
     })
     .catch(err => {
       if (!newName || !newCourse || !newScore) {
@@ -92,11 +88,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
       if (!gradeResult) {
         res.status(404).json({ error: `gradeId ${gradeId} does not exist.` });
       } else {
-        res.status(200).json({
-          name: newName,
-          course: newCourse,
-          score: newScore
-        });
+        res.status(200).json(gradeResult);
       }
     })
     .catch(err => {
