@@ -33,3 +33,5 @@ const firstIndex = word => {
 };
 
 const firstLetters = languages.map(firstIndex);
+
+// pushing again. accidentally merged before approved
