@@ -47,8 +47,8 @@ deck = _.shuffle(deck);
 
 function dealCards() {
   for (let i = 0; i < players.length; i++) {
+    const dealCards = deck.splice(_.random(0, deck.length), 2);
     if (players[i].hand.length !== 2) {
-      const dealCards = deck.splice(_.random(0, deck.length), 2);
       players[i].hand.push(dealCards);
     }
   }
@@ -56,6 +56,34 @@ function dealCards() {
 
 dealCards();
 
-// function determineWinner() {
+function determineScore(playerIndex) {
+  let score = 0;
+  const playerHand = players[playerIndex].hand[0];
 
-// }
+  for (const key in playerHand) {
+    if (playerHand[key].rank === 'ace') {
+      score += 11;
+    } else if (playerHand[key].rank === 'jack' || playerHand[key].rank === 'queen' || playerHand[key].rank === 'king') {
+      score += 10;
+    } else if (playerHand[key].rank) {
+      score += parseInt(playerHand[key].rank);
+    }
+  }
+  return score;
+}
+
+function determineWinner() {
+  const scoresArray = [];
+
+  for (let i = 0; i < players.length; i++) {
+    players[i].score = determineScore(i);
+    scoresArray.push(players[i]);
+  }
+
+  const findWinner = _.maxBy(scoresArray, 'score');
+  const winner = findWinner.name;
+
+  console.log(`${winner} is the winner with a score of ${findWinner.score}!`);
+}
+
+determineWinner();
