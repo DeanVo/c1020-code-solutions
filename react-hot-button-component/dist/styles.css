@@ -1,0 +1,37 @@
+button {
+  padding: 0.5rem 1.2rem;
+  border: 0.2rem solid black;
+  border-radius: 0.12rem;
+  text-decoration: none;
+  outline: none;
+}
+
+.layer1 {
+  background-color: purple;
+  color: white;
+}
+
+.layer2 {
+  color: white;
+  background-color: plum;
+}
+
+.layer3 {
+  color: white;
+  background-color: palevioletred;
+}
+
+.layer4 {
+  color: black;
+  background-color: salmon;
+}
+
+.layer5 {
+  color: black;
+  background-color: yellow;
+}
+
+.layer6 {
+  color: black;
+  background-color: white;
+}
