@@ -1,0 +1,32 @@
+.container {
+  width: 200px;
+  height: 200px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid black;
+  line-height: 200px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.playIcon {
+  position: relative;
+  left: 45%;
+  top: 10%;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.pauseIcon {
+  position: relative;
+  left: 45%;
+  top: 10%;
+  font-size: 2rem;
+  cursor: pointer;
+}
