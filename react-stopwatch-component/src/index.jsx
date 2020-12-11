@@ -5,41 +5,54 @@ class StopWatch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stopwatchFaceOn: false,
-      stopwatchIconOn: false,
-      counter: 0
+      stopwatchActive: false,
+      counter: 0,
+      intervalID: null
     };
-    this.handleIcon = this.handleIcon.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
-  // handleFace() {
-  //   this.setState({ stopwatchFaceOn: true });
-  // }
+  handlePlay() {
+    const stopwatchStatus = this.state.stopwatchActive;
+    this.setState({ stopwatchActive: !stopwatchStatus });
 
-  handleIcon() {
-    this.setState({ stopwatchIconOn: !this.state.stopwatchIconOn });
+    if (!stopwatchStatus) {
+      this.setState({
+        intervalID: setInterval(() => {
+          this.setState({ counter: this.state.counter + 1 });
+        }, 1000)
+      });
+    } else {
+      clearInterval(this.state.intervalID);
+    }
+  }
+
+  handleReset() {
+    if (!this.state.stopwatchActive) {
+      this.setState({ counter: 0 });
+    }
   }
 
   render() {
-    // const swFace = this.state.stopwatchFaceOn;
-    const swIcon = this.state.stopwatchIconOn;
+    const stopwatchStatus = this.state.stopwatchActive;
     const playStatus = {
       play: 'fas fa-play playIcon',
       pause: 'fas fa-pause pauseIcon'
     };
 
-    if (!swIcon) {
+    if (!stopwatchStatus) {
       return (
         <div className='container'>
-          <div className='circle'>{this.state.counter}</div>
-          <i className={playStatus.play} onClick={this.handleIcon}></i>
+          <div className='circle' onClick={this.handleReset}>{this.state.counter}</div>
+          <i className={playStatus.play} onClick={this.handlePlay}></i>
         </div>
       );
     } else {
       return (
         <div className='container'>
-          <div className='circle'>{this.state.counter}</div>
-          <i className={playStatus.pause} onClick={this.handleIcon}></i>
+          <div className='circle' onClick={this.handleReset}>{this.state.counter}</div>
+          <i className={playStatus.pause} onClick={this.handlePlay}></i>
         </div>
       );
     }
