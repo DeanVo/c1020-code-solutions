@@ -1,0 +1,37 @@
+.menuBars {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menuList {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 2;
+  cursor: pointer;
+}
+
+.menu {
+  margin-right: 2rem;
+  margin-left: 2rem;
+  width: 25%;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.grey-bg {
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+  border-left: 2px solid black;
+}
