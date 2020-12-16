@@ -35,7 +35,7 @@ export default class App extends React.Component {
     fetch('/api/todos', requestOptions)
       .then(response => response.json())
       .then(data => {
-        const newState = this.state.todos;
+        const newState = this.state.todos.slice();
 
         newState.push(data);
         this.setState({ todos: newState });
@@ -64,7 +64,7 @@ export default class App extends React.Component {
     fetch(`/api/todos/${todoId}`, requestOptions)
       .then(response => response.json())
       .then(data => {
-        const newState = this.state.todos;
+        const newState = this.state.todos.slice();
 
         newState[todoIndex] = data;
         this.setState({ todos: newState });
