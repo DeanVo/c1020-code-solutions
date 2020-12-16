@@ -8028,6 +8028,7 @@ class ValidatedInput extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 
   render() {
     let icon;
+<<<<<<< HEAD
     let message;
     let messageDigit;
     let messageCap;
@@ -8041,11 +8042,24 @@ class ValidatedInput extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       message = 'A password is required.';
     } else if (this.state.input.length < 8) {
       icon = 'fas fa-times icon red';
+=======
+    let error;
+    let message;
+
+    if (this.state.input.length === 0) {
+      icon = 'fas fa-times icon red';
+      error = 'error-message';
+      message = 'A password is required.';
+    } else if (this.state.input.length < 8) {
+      icon = 'fas fa-times icon red';
+      error = 'error-message';
+>>>>>>> b0e674552b971f4b44e6d9a5b145251ca0908446
       message = 'Your password is too short.';
     } else {
       icon = 'fas fa-check icon green';
     }
 
+<<<<<<< HEAD
     if (!regexrDigit.test(this.state.input)) {
       messageDigit = 'You need at least one digit.';
     }
@@ -8058,6 +8072,8 @@ class ValidatedInput extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       messageSpecial = 'You need at least one special character. (!, @, #, $, %, ^, &, *, (, or ))';
     }
 
+=======
+>>>>>>> b0e674552b971f4b44e6d9a5b145251ca0908446
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -8074,10 +8090,15 @@ class ValidatedInput extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
       className: icon
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+<<<<<<< HEAD
       className: "error-message"
     }, message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
       className: "error-message"
     }, messageDigit, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), messageCap, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), messageSpecial));
+=======
+      className: error
+    }, message));
+>>>>>>> b0e674552b971f4b44e6d9a5b145251ca0908446
   }
 
 }
