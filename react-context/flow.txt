@@ -1,0 +1,16 @@
+User can sign up
+  User will be able to register an account to the database from the client side. Once the user has navigated to the sign up page,
+  they can input their own username and password. Once submitted, the data will be queried to the database where the username is
+  saved in a table and the password is hashed. This data is saved for future use.
+
+
+User can sign in
+  User can only access features of this app when they have an account. Once the user is registered, they will be able to login with
+  the account they created earlier. Client side will make requests to the server to validate that this is a registered account from the
+  database. If the password matches the hashed password then the user is allowed to access the main app features.
+
+
+User can stay signed in
+  On login, a token is created from the server and goes through a verification process. Once the server confirms with the database that
+  this is a valid account, the server will issue the account a token that is digitally signed. This serves as a way to authenticate
+  that the user is who they say they are and allow the user to stay signed in even when navigating away from the page.
