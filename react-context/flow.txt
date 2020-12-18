@@ -1,6 +1,7 @@
 User can sign up
-  User will be able to register an account to the database from the client side. Once the user has navigated to the sign up page,
-  they can input their own username and password. Once submitted, the data will be queried to the database where the username is
+  User will be able to register an account by sending a request to the server from the client side.
+  Assuming there are no issues and the request goes through, server will take this information
+  and send it to the database to be stored. Once submitted, the data will be queried to the database where the username is
   saved in a table and the password is hashed. This data is saved for future use.
 
 
@@ -9,8 +10,14 @@ User can sign in
   the account they created earlier. Client side will make requests to the server to validate that this is a registered account from the
   database. If the password matches the hashed password then the user is allowed to access the main app features.
 
+  The app decides what screen to show based on the state of the route. Depending on the React element clicked, the route state will change to
+  render the corresponding page.
+
 
 User can stay signed in
   On login, a token is created from the server and goes through a verification process. Once the server confirms with the database that
   this is a valid account, the server will issue the account a token that is digitally signed. This serves as a way to authenticate
   that the user is who they say they are and allow the user to stay signed in even when navigating away from the page.
+
+  The user stays logged in because once they are signed in, their user data is stored in the user state. They will not log out until the user state
+  is cleared, or by clicking the Sign Out button or clearing the cache.
